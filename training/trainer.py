@@ -9,10 +9,10 @@ from typing import Dict, Optional, Any
 import time
 import os
 
-from ..models.hybrid_model import HybridTransformerSSM
-from .losses import HybridLoss
-from .metrics import compute_metrics
-from ..utils.memory_utils import MemoryTracker
+from models.hybrid_model import HybridTransformerSSM
+from losses import HybridLoss
+from metrics import compute_metrics
+from utils.memory_utils import MemoryTracker
 
 
 class HybridTrainer:
