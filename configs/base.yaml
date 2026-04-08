@@ -1,0 +1,57 @@
+# Model Configuration
+model:
+  dim: 256
+  depth: 6
+  heads: 8
+  dropout: 0.1
+  vocab_size: 1000
+  num_classes: 10
+  max_seq_len: 16384
+  pos_encoding: 'sinusoidal'  # sinusoidal, rope, learnable, none
+  checkpoint_activations: true
+
+# Scheduler Configuration
+scheduler:
+  temperature: 1.0
+  hard: false
+  token_level: true
+  target_transformer_ratio: 0.3
+
+# Training Configuration
+training:
+  batch_size: 32
+  epochs: 50
+  learning_rate: 3.0e-4
+  weight_decay: 0.01
+  warmup_steps: 1000
+  use_amp: true
+  gradient_clip: 1.0
+  checkpoint_freq: 5
+
+# Loss Configuration
+loss:
+  task_weight: 1.0
+  entropy_weight: 0.01
+  compute_weight: 0.01
+  balance_weight: 0.01
+
+# Data Configuration
+data:
+  dataset: 'synthetic'  # synthetic, listops, text, retrieval, pathfinder, pathx
+  data_dir: './data'
+  num_workers: 4
+  dataset_kwargs:
+    pattern_type: 'associative'  # copy, associative, hierarchy
+    num_samples: 50000
+
+# Logging
+logging:
+  log_dir: './logs'
+  checkpoint_dir: './checkpoints'
+  figure_dir: './figures'
+  use_wandb: true
+  wandb_project: 'hybrid-transformer-ssm'
+  experiment_name: 'base_experiment'
+
+# Distributed Training
+distributed: false
