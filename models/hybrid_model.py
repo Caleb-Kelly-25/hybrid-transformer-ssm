@@ -3,10 +3,10 @@ import torch.nn as nn
 from typing import Optional, Dict, List, Tuple, Literal
 import math
 
-from transformer_block import TransformerBlock
-from mamba_block import MambaBlock
-from scheduler import AdaptiveScheduler
-from positional_encoding import (
+from .transformer_block import TransformerBlock
+from .mamba_block import MambaBlock
+from .scheduler import AdaptiveScheduler
+from .positional_encoding import (
     PositionalEncoding,
     RotaryPositionalEncoding,
     LearnablePositionalEncoding

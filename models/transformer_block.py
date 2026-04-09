@@ -41,7 +41,7 @@ class TransformerBlock(nn.Module):
         self.causal = causal
         self.use_rope = use_rope
         if use_rope:
-            from positional_encoding import RotaryPositionalEncoding
+            from .positional_encoding import RotaryPositionalEncoding
             self.rope = RotaryPositionalEncoding(self.head_dim)
         
     def forward(
